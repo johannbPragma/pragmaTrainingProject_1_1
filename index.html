@@ -15,43 +15,64 @@
                 width: 600px;  
                 height: 600px;  
                 padding: 5px;            
-                display: grid;                
-                grid-template-columns: [c1] auto [c2] auto [c3] auto [c4] auto;
-                grid-template-rows: [r1] 3rem [r2] 3rem [r3] 3rem [r4] 3rem;                
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                grid-template-rows: 3rem 3rem 3rem 3rem;
+                grid-template-areas: 
+                "title1 title2 title3 status"
+                "row1 row1 row1 row1Status"
+                "row2 row2 row2 row2Status"
+                "row3 row3 row3 row3Status";   
+                border: 1px solid black;                             
             }
 
-            /* Grid records */
-            .item {
-                grid-column: c1 / c5;
-                border-top: 1px solid lightgray;                                                
-                display: flex;                
-                align-items: center;             
+            /* Items */
+            .item1 {
+                grid-area: row1;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                align-items: center;
+                border: 1px solid blue;
+            }    
+
+           
+            /* Drawings */
+            .circleGray
+            {                
+                width: 2rem;
+                height: 2rem;
+                background: lightgray;                
+                border-radius: 100%;
             }
-         
+
+            /* Other */
+            .progressBar {
+                width: 100%
+            }
 
         </style>        
     </head>
 
     <body>
         <div class="container">
-            <label>Task 1</label>
-            <label>Task 2</label>
-            <label>Task 3</label>
-            <label>Status</label>
-
-            <!-- Grid records -->
-            <div class="item">                 
+            
+            <label class="title1">Task 1</label>
+            <label class="title2">Task 2</label>
+            <label class="title3">Task 3</label>
+            <label class="status">Status</label>
+              
+            <div class="item1">   
+                <!-- <progress class="progressBar"></progress> -->
+                <div class="circleGray"></div>            
+                <div class="circleGray"></div>            
+                <div class="circleGray"></div>
             </div>
+            
+            
+        
+            
+            
 
-            <div class="item">
-                test
-            </div>       
-            <!-- <ul>
-                <li class="item"></li>
-                <li class="item"></li>
-                <li class="item"></li>
-                <li class="item"></li>
-            </ul> -->
             
         </div>    
     </body>
