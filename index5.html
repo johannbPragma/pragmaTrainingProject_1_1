@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>Pragma Project 1.1</title>
+
+        <style>
+
+            .progressBar {
+                display: flex;
+                justify-content: space-between;
+            }
+           
+            li {
+                width: 2em;
+                height: 2em;
+                text-align: center;
+                line-height: 2em;
+                border-radius: 1em;
+                background: lightgray;
+                margin: 0 1em;
+                display: inline-block;
+                color: black;
+                position: relative;
+            }
+
+            li:first-child::before {
+                display: none;
+            }
+
+            .active {
+                background: green;
+            }
+
+            .active ~ li {
+                background: lightgray;
+            }
+
+            .active ~ li::before {
+                background: green;
+            }                                                                             
+            
+
+        </style>        
+    </head>
+
+    <body>
+        <div>
+            <ul class="progressBar">
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>        
+            </ul>
+            
+        </div>          
+    </body>
+
+</html>
