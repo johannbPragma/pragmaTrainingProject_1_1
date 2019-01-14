@@ -1,0 +1,19 @@
+/node_modules/
+/jspm_packages/
+/styles/
+/coverage/
+/test/e2e/logs/
+/test/e2e/metrics/
+/publish/
+/dist/
+.nyc_output
+.vs
+package-lock.json
+*-generated.html
+
+# Idea files to exclude
+.idea/*.*
+
+# Idea files to include
+!/.idea/inspectionProfiles
+!/.idea/codeStyles
