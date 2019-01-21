@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Pragma Project 1.1</title>
+
+    <style>
+        .container {
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+        }
+        
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            padding: 0; /*This is to get rid of use style sheet padding for ul*/
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+            height: 2em;
+            width: 2em;
+            background: lightgray;
+            border-radius: 100%
+        }
+
+        .progressBar {
+            width: auto;
+            height: 0.7em;
+            position: fixed;
+            top: 50%;
+            left: 1em;
+            right: 1em;
+            background: lightgrey;
+            border-radius: 0.7em;
+        }
+
+        .progressValue {
+            display: block;
+            height: 100%;
+            width: 25%;
+            border-radius: 0.7em;
+            background-color: green;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* States */
+        li.active::before {
+            content: "";
+            display:block;
+            position: relative;
+            top: 0.25em;
+            left: 0.25em;
+            height: 1.5em;
+            width: 1.5em;                        
+            background: darkcyan;
+            border-radius: 100%
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <ul>
+        <li>1</li>
+        <li class="active">2</li>
+        <li>3</li>        
+    </ul>
+    
+    <div class="progressBar">
+        <span class="progressValue"></span>
+    </div>
+</div>
+
+
+</body>
+
+</html>

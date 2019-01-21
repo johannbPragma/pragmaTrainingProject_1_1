@@ -6,75 +6,80 @@
         <title>Pragma Project 1.1</title>
 
         <style>
-/* To do
-    - .container
-        + remove background color
-        + auto size possible
- */
             .container {
-                width: 600px;  
-                height: 600px;  
-                padding: 5px;            
-                display: grid;
-                grid-template-columns: auto auto auto auto;
-                grid-template-rows: 3rem 3rem 3rem 3rem;
-                grid-template-areas: 
-                "title1 title2 title3 status"
-                "row1 row1 row1 row1Status"
-                "row2 row2 row2 row2Status"
-                "row3 row3 row3 row3Status";   
-                border: 1px solid black;                             
+                height: 3em;
+                width: 100%;
+                border: 1px solid black;
             }
 
-            /* Items */
-            .item1 {
-                grid-area: row1;
-                display: grid;
-                grid-template-columns: auto auto auto;
-                align-items: center;
-                border: 1px solid blue;
-            }    
-
-           
-            /* Drawings */
-            .circleGray
-            {                
-                width: 2rem;
-                height: 2rem;
-                background: lightgray;                
-                border-radius: 100%;
+            .step {
+                height: 2em;
+                width: 2em;
+                position: fixed;
+                top: 1em;
+                left: 45%;                
+                background: lightgray;
+                border-radius: 100%
             }
 
-            /* Other */
+            .step::before {
+                content: "";
+                display:block;
+                height: 2em;
+                width: 2em;
+                position: fixed;
+                top: 1em;
+                left: 5%;
+                background: lightgray;
+                border-radius: 100%
+            }
+
+            .step::after {
+                content: "";
+                display:block;
+                height: 2em;
+                width: 2em;
+                position: fixed;
+                top: 1em;
+                right: 5%;
+                background: lightgray;
+                border-radius: 100%
+            }
+
             .progressBar {
-                width: 100%
+                width: auto;
+                height: 0.7em;
+                position: fixed;
+                top: 1.6em;                
+                left: 5%;
+                right: 5%;
+                background: lightgrey;
+                border-radius: 0.7em;                
+            }           
+            
+            .progressValue {
+                display: block;
+                height: 100%;
+                width: 25%;
+                border-radius: 0.7em;
+                background-color: darkgreen;
+                position: relative;
+                overflow: hidden;                
             }
 
         </style>        
     </head>
 
     <body>
-        <div class="container">
-            
-            <label class="title1">Task 1</label>
-            <label class="title2">Task 2</label>
-            <label class="title3">Task 3</label>
-            <label class="status">Status</label>
-              
-            <div class="item1">   
-                <!-- <progress class="progressBar"></progress> -->
-                <div class="circleGray"></div>            
-                <div class="circleGray"></div>            
-                <div class="circleGray"></div>
-            </div>
-            
-            
-        
-            
-            
 
-            
-        </div>    
+        <div class="container">
+            <div class="step"></div>
+            <div class="progressBar">
+                <span class="progressValue"></span>
+            </div>    
+        </div>
+    
+    
     </body>
 
 </html>
