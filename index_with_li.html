@@ -51,6 +51,19 @@
         }
 
         /* States */
+        li.pending::before {
+            content: "P";            
+            display:block;
+            position: relative;
+            top: 0.25em;
+            left: 0.25em;
+            height: 1.5em;
+            width: 1.5em;
+            color: white;
+            background: darkorange;
+            border-radius: 100%
+        }
+
         li.passed::before {
             content: "P";            
             display:block;
@@ -77,6 +90,27 @@
             border-radius: 100%
         }
 
+        .progressRunning {
+            color: white;
+            background: darkblue;
+        }
+        
+        .progressPending {
+            color: white;
+            background: darkorange;
+        }
+
+        .progressPassed {
+            color: white;
+            background: darkcyan;
+        }
+
+        .progressFailed {
+            color: white;
+            background: darkred;
+        }
+        
+
     </style>
 </head>
 
@@ -84,13 +118,13 @@
 
 <div class="container">
     <ul>
-        <li></li>
+        <li class="pending"></li>
         <li class="passed"></li>
         <li class="failed"></li>        
     </ul>
     
     <div class="progressBar">
-        <span class="progressValue"></span>
+        <span class="progressValue progressRunning"></span>
     </div>
 </div>
 

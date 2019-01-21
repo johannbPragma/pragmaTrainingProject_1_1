@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <title>Pragma Project 1.1</title>
+
+        <style>
+            .container {
+                height: 3em;
+                width: auto;
+                border: 1px solid black;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1em;
+            }
+
+            .step {
+                height: 2em;
+                width: 2em;                
+                background: lightgray;
+                border-radius: 100%
+            }
+
+            .step.passed::before {
+                content: "P";
+                display:block;
+                position: relative;
+                top: 0.25em;
+                left: 0.25em;
+                height: 1.5em;
+                width: 1.5em;
+                color: white;
+                background: darkcyan;
+                border-radius: 100%;
+                z-index: 1;
+            }
+
+            .progressBar {
+                width: auto;
+                height: 0.7em;
+                position: fixed;
+                left: 2em;
+                right: 2em;
+                background: lightgrey;
+                border-radius: 0.7em;                
+            }           
+            
+            .progressValue {
+                display: block;
+                height: 100%;
+                width: 25%;
+                border-radius: 0.7em;
+                background-color: darkgreen;
+                position: relative;
+                overflow: hidden;                
+            }
+
+        </style>        
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="step passed"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            
+            <div class="progressBar">
+                <span class="progressValue"></span>
+            </div>    
+        </div>
+    
+    
+    </body>
+
+</html>
