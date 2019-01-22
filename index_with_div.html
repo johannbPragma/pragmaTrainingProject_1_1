@@ -23,6 +23,56 @@
                 border-radius: 100%
             }
 
+            .progressBar {
+                width: auto;
+                height: 0.7em;
+                position: fixed;
+                left: 2em;
+                right: 2em;
+                background: lightgrey;
+                border-radius: 0.7em;                
+            }           
+            
+            .progressValue {
+                display: block;
+                height: 0.4em;
+                width: 25%;
+                margin: 0.15em;
+                border-radius: 0.7em;
+                background-color: darkgreen;
+                position: relative;
+                overflow: hidden;                
+            }
+            
+            /* States */
+            .step.running::before {
+                content: "R";
+                display:block;
+                position: relative;
+                top: 0.25em;
+                left: 0.25em;
+                height: 1.5em;
+                width: 1.5em;
+                color: white;
+                background: dodgerblue;
+                border-radius: 100%;
+                z-index: 1;
+            }
+            
+            .step.pending::before {
+                content: "...";
+                display:block;
+                position: relative;
+                top: 0.25em;
+                left: 0.25em;
+                height: 1.5em;
+                width: 1.5em;
+                color: white;
+                background: darkorange;
+                border-radius: 100%;
+                z-index: 1;
+            }
+            
             .step.passed::before {
                 content: "P";
                 display:block;
@@ -37,24 +87,18 @@
                 z-index: 1;
             }
 
-            .progressBar {
-                width: auto;
-                height: 0.7em;
-                position: fixed;
-                left: 2em;
-                right: 2em;
-                background: lightgrey;
-                border-radius: 0.7em;                
-            }           
-            
-            .progressValue {
-                display: block;
-                height: 100%;
-                width: 25%;
-                border-radius: 0.7em;
-                background-color: darkgreen;
+            .step.failed::before {
+                content: "F";
+                display:block;
                 position: relative;
-                overflow: hidden;                
+                top: 0.25em;
+                left: 0.25em;
+                height: 1.5em;
+                width: 1.5em;
+                color: white;
+                background: darkred;
+                border-radius: 100%;
+                z-index: 1;
             }
 
         </style>        
@@ -64,8 +108,8 @@
 
         <div class="container">
             <div class="step passed"></div>
-            <div class="step"></div>
-            <div class="step"></div>
+            <div class="step running"></div>
+            <div class="step pending"></div>
             
             <div class="progressBar">
                 <span class="progressValue"></span>
